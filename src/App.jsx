@@ -4,10 +4,12 @@ import Home from "./pages/Home";
 import StudentForm from "./components/StudentForm";
 import { ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css"; 
+import { useSelector } from "react-redux";
 import "./styles.css";
 import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
+  
   return (
     <Router>
       <div className="container">
@@ -15,6 +17,7 @@ export default function App() {
           <div className="nav-links">
             <Link to="/">🏠 Home</Link>
             <Link to="/add">➕ Add Student</Link>
+            
           </div>
           <ThemeToggle /> {/* Move ThemeToggle inside nav */}
         </nav>

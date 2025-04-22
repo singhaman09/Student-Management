@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // Load students from localStorage
 const loadStudents = () => {
   const data = localStorage.getItem("students");
+
   return data ? JSON.parse(data) : [];
 };
 
@@ -10,10 +11,12 @@ const studentSlice = createSlice({
   name: "students",
   initialState: loadStudents(),
   reducers: {
+    
     //handles adding, use unshift - to add at top
     addStudent: (state, action) => {
       state.unshift(action.payload);
       localStorage.setItem("students", JSON.stringify(state));
+      
     },
     //handles editing
     editStudent: (state, action) => {

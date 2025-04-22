@@ -19,7 +19,9 @@ export default function Home() {
   //perform deletion process
   const handleDelete = () => {
     dispatch(deleteStudent(selectedStudent.id));
-    toast.error("Student deleted successfully!");
+    toast.error("Student deleted successfully!",{
+      toastId: 'success1',
+    });
     setShowConfirm(false);
   };
 

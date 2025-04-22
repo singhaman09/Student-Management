@@ -42,17 +42,18 @@ export default function StudentForm() {
     if (id) {
       //used toastify for notification
       dispatch(editStudent({ ...form, id }));
-      toast.success("Student edited successfully!");
+      toast.success("Student edited successfully!",{
+        toastId: 'success1',
+      });
+
     } else {
       //used toastify for notification
       dispatch(addStudent({ ...form, id: Date.now().toString() }));
-      toast.success("Student added successfully!");
+      toast.success("Student added successfully!"),{
+        toastId: 'success1',
+      };
     }
-    // Delay navigation so the success message is visible
-    setTimeout(() => {
-      //navigate to home page
-      navigate("/");
-    }, 1500);
+    navigate("/");
   };
 
   return (
